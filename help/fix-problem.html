@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix a Problem - Doodloo Help</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="help-style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="left-nav">
+                    <img src="../assets/img/doodlo.png" alt="Bear Logo" class="logo">
+                </div>
+                <div class="center-nav">
+                    <a href="../index.html">Design</a>
+                    <a href="../index.html">Education</a>
+                    <a href="index.html" class="help-link">Help</a>
+                </div>
+                <div class="right-nav">
+                    <button class="register-btn">REGISTER</button>
+                    <button class="login-btn">LOGIN</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="help-section">
+        <div class="container">
+            <div class="help-content">
+                <div class="help-header">
+                    <span class="breadcrumb">Help Center › Fix A Problem</span>
+                    <div class="icon-circle">
+                        <img src="../assets/img/lamp.png" alt="Help Icon" class="help-icon">
+                    </div>
+                </div>
+                <div class="problem-section">
+                    <h2>Fix a problem</h2>
+                    <p>Find quick solutions to common problems</p>
+                    
+                    <div class="help-categories">
+                        <div class="category">
+                            <h3>Editing and designing</h3>
+                            <ul>
+                                <li><a href="missing-designs.html">My design has gone missing, I can't find it</a></li>
+                                <li><a href="#">Edits to my design haven't saved</a></li>
+                                <li><a href="#">My text doesn't display properly</a></li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Downloading, saving, and sharing</h3>
+                            <ul>
+                                <li><a href="download.html">I'm getting a download error message</a></li>
+                                <li><a href="download.html">My download looks blurry or pixelated</a></li>
+                            </ul>
+                            <h3>Missing Designs</h3>
+                            <ul>
+                                <li><a href="missing-designs.html">Find your missing designs</a></li>
+                                <li><a href="missing-designs.html">Recover deleted designs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>How would you rate the help you received from this article?</h3>
+                        <div class="rating-buttons">
+                            <button class="rating-btn">👍 Helpful</button>
+                            <button class="rating-btn">👎 Not helpful</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (link.getAttribute('href').startsWith('#')) return;
+                    e.preventDefault();
+                    document.querySelector('.help-section').style.opacity = '0';
+                    setTimeout(() => {
+                        window.location = link.href;
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
